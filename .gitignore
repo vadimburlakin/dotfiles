@@ -1,0 +1,4 @@
+.vim/bundle/
+.DS_Store
+.tmux/plugins/*
+*.swp
