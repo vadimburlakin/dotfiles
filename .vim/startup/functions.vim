@@ -1,62 +1,23 @@
 fun! Format_WhiteSpace_RemoveTrailing()
-	:%s/\v\s*$//g
+  :%s/\v\s*$//g
 endfun
 
-fun! Format_Inflection_ToCamelCase()
-	:s/\v([a-z])_([a-z])/\1\u\2/g
-endfun
-
-fun! Format_Inflection_ToUnderscored()
-	:s/\v([a-z])([A-Z])/\L\1_\2/g
-endfun
-
-fun! CheckTabs()
-	if search("\t") != 0
-		echohl ErrorMsg | ec "                                 !WARNING!                              "
-					\ |              ec "There are tabs in the file, do you want to convert them to spaces? [Y/n]" | echohl None
-		let choice = nr2char(getchar())
-		if choice == 'y' || choice == "\<CR>"
-			retab 2
-		endif
-	else
-		return
-	endif
-endfun
-
-function! EnsureDirExists ()
-	let required_dir = expand("%:h")
-	if !isdirectory(required_dir)
-		call mkdir(required_dir, 'p')
-	endif
+function! FormatJSON()
+:%!python -m json.tool
 endfunction
 
-fun! s:Sinit(filen)
-	echo expand(a:filen)
-	exec "ScreenShell cd " . expand(a:filen) . "; \\clear"
+fun! CheckTabs()
+  if search("\t") != 0
+    echohl ErrorMsg | ec "                                 !WARNING!                              "
+          \ |              ec "There are tabs in the file, do you want to convert them to spaces? [Y/n]" | echohl None
+    let choice = nr2char(getchar())
+    if choice == 'y' || choice == "\<CR>"
+      retab 2
+    endif
+  else
+    return
+  endif
 endfun
-
-function! ToggleFocusMode()
-	if (&foldcolumn != 12)
-		set laststatus=0
-		set numberwidth=10
-		set foldcolumn=12
-		set noruler
-		hi FoldColumn ctermbg=none
-		hi LineNr ctermfg=0 ctermbg=none
-		hi NonText ctermfg=0
-        set nonu norelativenumber
-        GitGutterDisable
-	else
-		set laststatus=2
-		set numberwidth=4
-		set foldcolumn=0
-		set ruler
-        set nu relativenumber
-        GitGutterEnable
-		colorscheme skittles_berry "re-call your colorscheme
-	endif
-endfunc
-nnoremap <F1> :call ToggleFocusMode()<cr>
 
 " Highlight all instances of word under cursor, when idle.
 " Useful when studying strange source code.
@@ -67,7 +28,6 @@ function! AutoHighlightToggle()
     if exists('#auto_highlight')
         au! auto_highlight
         augroup! auto_highlight
-        setl updatetime=4000
         echo 'Highlight current word: off'
         return 0
     else
@@ -75,8 +35,34 @@ function! AutoHighlightToggle()
             au!
             au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
         augroup end
-        setl updatetime=500
         echo 'Highlight current word: ON'
         return 1
     endif
 endfunction
+
+" Save current view settings on a per-window, per-buffer basis.
+function! AutoSaveWinView()
+    if !exists("w:SavedBufView")
+        let w:SavedBufView = {}
+    endif
+    let w:SavedBufView[bufnr("%")] = winsaveview()
+endfunction
+
+" Restore current view settings.
+function! AutoRestoreWinView()
+    let buf = bufnr("%")
+    if exists("w:SavedBufView") && has_key(w:SavedBufView, buf)
+        let v = winsaveview()
+        let atStartOfFile = v.lnum == 1 && v.col == 0
+        if atStartOfFile && !&diff
+            call winrestview(w:SavedBufView[buf])
+        endif
+        unlet w:SavedBufView[buf]
+    endif
+endfunction
+
+" When switching buffers, preserve window view.
+if v:version >= 700
+    autocmd BufLeave * call AutoSaveWinView()
+    autocmd BufEnter * call AutoRestoreWinView()
+endif

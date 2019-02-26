@@ -1,4 +1,3 @@
-"============== General Settings ===============
 set dict=/usr/share/dict/words
 set cursorline
 set showcmd
@@ -7,52 +6,50 @@ set incsearch
 set wildmenu
 syntax enable
 set synmaxcol=0
-set term=screen-256color
+if !has('nvim')
+  set ttymouse=xterm2
+  set term=screen-256color
+endif
 set display=uhex
 set shortmess=aAIsT
 set nowrap
 if &diff
-	set wrap
+  set wrap
 endif
 set diffopt+=iwhite
 let &scrolloff=999-&scrolloff
+set ignorecase
 set smartcase
 set relativenumber
 set nowritebackup
-
 set completeopt=menu
 set mousemodel=popup
 set backspace=2
 set number
 set nocompatible
-
 set enc=utf-8
 set fillchars=vert:¦
-
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
-set foldcolumn=1
-set foldlevel=20
+" this will disable automatic folding in files like yaml:
+set nofoldenable
+" this settings are applied if folding is enabled:
+" set foldcolumn=1
+" set foldlevel=20
 set cc=+1,+2
-
 set linespace=0
 set history=1000
 set list listchars=tab:› ,trail:-,extends:>,precedes:<,eol:¬
-
 set laststatus=2
 set ffs=unix,dos
 set mouse=a
 set vb
-set ttym=xterm2
-
-set wrap
-
-set tags=./tags
-
+set tags=tags;/
 set updatetime=500
+set splitright
+set conceallevel=0
+set clipboard=unnamed
 
 runtime macros/matchit.vim
-
-set clipboard=unnamed
 
 if version > 720
 	set undofile
@@ -67,12 +64,12 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" NERDTree configuration
-let NERDTreeMinimalUI = 1
+" NERDTree
+let NERDTreeMinimalUI = 0
 let NERDTreeDirArrows = 0
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen = 1
 
-" Vim-Airline Configuration
+" Vim-Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
@@ -80,34 +77,42 @@ let g:airline_theme='hybrid'
 let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 1
 
-" Syntastic Configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-" indent guides Configuration
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_color_change_percent = 10
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
-let g:indent_guides_space_guides = 1
-let g:indent_guides_guide_size = 1
-
-" gitgutter Configuration
+" gitgutter
 let g:gitgutter_sign_modified = '≈ '
 let g:gitgutter_sign_removed = '⌐ '
 
-" Vim-pencil Configuration
-let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
-augroup pencil
-  autocmd!
-  autocmd FileType markdown,mkd call pencil#init()
-  autocmd FileType text         call pencil#init()
-augroup END
-
-" Vim-Test Configuration
+" Vim-Test
 let test#strategy = "vimux"
+
+" neosnippet
+let g:neosnippet#snippets_directory='~/.vim/snippets'
+let g:neosnippet#disable_runtime_snippets = {
+		\   '_' : 1,
+		\ }
+
+" deoplete
+autocmd VimEnter * call deoplete#custom#option('ignore_sources', {'_': ['dictionary']})
+let g:deoplete#auto_complete_start_length = 1 
+let g:deoplete#enable_at_startup = 1 
+let g:deoplete#enable_smart_case = 1 
+
+" auto save
+let g:auto_save = 1
+let g:neosnippet#enable_auto_clear_markers = 0
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
+
+" auto pairs
+au FileType * let b:autopairs_enabled = 0
+let g:AutoPairsMapBS = 0
+let g:AutoPairsMapCR=0 
+
+" this is for neovim to properly recognize path to my ruby binary
+" where necessary gems are installed:
+let g:ruby_host_prog = '~/.rbenv/versions/2.6.0/bin/neovim-ruby-host'
+
+" fuzzy search will respond to ? and open a preview window
+" command! -bang -nargs=* Ag
+"       \ call fzf#vim#ag(<q-args>,
+"       \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+"       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+"       \                 <bang>0)
