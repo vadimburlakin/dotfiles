@@ -104,7 +104,8 @@ let g:auto_save_events = ["InsertLeave", "TextChanged"]
 " auto pairs
 au FileType * let b:autopairs_enabled = 0
 let g:AutoPairsMapBS = 0
-let g:AutoPairsMapCR=0 
+let g:AutoPairsMapCR = 0 
+let g:AutoPairsMultilineClose = 0
 
 " this is for neovim to properly recognize path to my ruby binary
 " where necessary gems are installed:
