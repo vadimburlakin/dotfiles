@@ -57,18 +57,18 @@ imap ˙ <C-o>b
 imap ¬ <C-o>w
 
 " neosnippet key-mappings.
-imap <expr><C-j> pumvisible() ? "\<C-n>" :  "\<Down>"
+imap <expr><C-j> pumvisible() ? "\<C-n>" :  "\<Down>\<C-o>A"
 imap <expr><C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 imap <C-h> <Left>
-imap <expr><cr> pumvisible() ? (neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : deoplete#mappings#close_popup()) : "\<CR>"
+imap <expr><cr> pumvisible() ? (neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : deoplete#mappings#close_popup()) : "\<CR>\<Plug>AutoPairsReturn"
 imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
 vmap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
 xmap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
-imap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<Right>"
-smap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<Right>"
-vmap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<Right>"
-xmap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<Right>"
+imap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<C-o>A"
+smap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<C-o>A"
+vmap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<C-o>A"
+xmap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<C-o>A"
 
 if has('conceal')
   set conceallevel=2 concealcursor=niv
