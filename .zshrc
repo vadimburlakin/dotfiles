@@ -5,8 +5,7 @@ export NVM_DIR="$HOME/.nvm"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/vadim/.oh-my-zsh"
 
-set -o vi
-bindkey -v
+bindkey "^[" vi-cmd-mode
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
