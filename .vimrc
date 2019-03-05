@@ -10,3 +10,4 @@ source ~/.vim/startup/mappings.vim
 " Syntax-specific settings
 source ~/.vim/filetypes/javascript.vim
 source ~/.vim/filetypes/html.vim
+source ~/.vim/filetypes/ruby.vim
