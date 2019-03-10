@@ -6,6 +6,10 @@ nnoremap <Down>  :resize -5<CR>
 nnoremap <Left>  :vertical resize +5<CR>
 nnoremap <Right> :vertical resize -5<CR>
 
+" numbered jumping adds position to the jump list
+nnoremap <expr> k (v:count > 1 ? "m'" . v:count : '') . 'k'
+nnoremap <expr> j (v:count > 1 ? "m'" . v:count : '') . 'j'
+
 " navigate through windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j

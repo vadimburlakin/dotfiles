@@ -5,6 +5,7 @@ export NVM_DIR="$HOME/.nvm"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/vadim/.oh-my-zsh"
 
+bindkey -e
 bindkey "^[" vi-cmd-mode
 
 # Set name of the theme to load --- if set to "random", it will
@@ -113,6 +114,9 @@ tmp () {
 }
 cdl () {
   cd $1 && ls
+}
+mkdircd () {
+  mkdir -p $1 && cd $1
 }
 cdf () {
     currFolderPath=$( /usr/bin/osascript <<"    EOT"
