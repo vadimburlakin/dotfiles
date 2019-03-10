@@ -3,7 +3,7 @@ export PATH=$PATH:$GOPATH/bin
 export NVM_DIR="$HOME/.nvm"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/vadim/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 bindkey -e
 bindkey "^[" vi-cmd-mode
