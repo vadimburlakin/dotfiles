@@ -5,9 +5,6 @@ export NVM_DIR="$HOME/.nvm"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-bindkey -e
-bindkey "^[" vi-cmd-mode
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -70,6 +67,7 @@ plugins=(
   git
   thefuck
   zsh-autosuggestions
+  vi-mode
   fzf
   docker
 )
@@ -163,3 +161,10 @@ eval "$(rbenv init -)"
 if [ -e ~/.zshrc.private ]; then
   source ~/.zshrc.private
 fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/vadim/work/mt-deploy-ssu/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/vadim/work/mt-deploy-ssu/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/vadim/work/mt-deploy-ssu/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/vadim/work/mt-deploy-ssu/node_modules/tabtab/.completions/sls.zsh
