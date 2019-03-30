@@ -161,10 +161,3 @@ eval "$(rbenv init -)"
 if [ -e ~/.zshrc.private ]; then
   source ~/.zshrc.private
 fi
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/vadim/work/mt-deploy-ssu/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/vadim/work/mt-deploy-ssu/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/vadim/work/mt-deploy-ssu/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/vadim/work/mt-deploy-ssu/node_modules/tabtab/.completions/sls.zsh
