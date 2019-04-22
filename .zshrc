@@ -1,6 +1,9 @@
+if [ -e ~/.zshrc.private ]; then
+  source ~/.zshrc.private
+fi
+
 export GOPATH="$HOME/.go"
 export PATH=$PATH:$GOPATH/bin
-export NVM_DIR="$HOME/.nvm"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -154,10 +157,6 @@ extract () {
 
 ff () { /usr/bin/find . -name "$@" ; }
 
-. "/usr/local/opt/nvm/nvm.sh"
+. "$NVM_DIR/nvm.sh"
 eval "$(rbenv init -)"
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
-
-if [ -e ~/.zshrc.private ]; then
-  source ~/.zshrc.private
-fi
