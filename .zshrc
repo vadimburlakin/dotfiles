@@ -73,7 +73,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
+bindkey '^xe' edit-command-line
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
