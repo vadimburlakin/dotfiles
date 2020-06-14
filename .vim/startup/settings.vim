@@ -47,7 +47,8 @@ set tags=tags;/
 set updatetime=500
 set splitright
 set conceallevel=0
-set clipboard=unnamed
+set clipboard=unnamedplus
+set encoding=utf-8
 
 runtime macros/matchit.vim
 
@@ -68,6 +69,17 @@ endif
 let NERDTreeMinimalUI = 0
 let NERDTreeDirArrows = 0
 let NERDTreeQuitOnOpen = 1
+
+" command! -bang -nargs=* Ag
+"       \ call fzf#vim#ag(<q-args>,
+"       \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+"       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+"       \                 <bang>0)
+
+if exists("g:loaded_nerdtree_grep_menuitem")
+    finish
+endif
+let g:loaded_nerdtree_grep_menuitem = 1
 
 " Vim-Airline
 let g:airline#extensions#tabline#enabled = 1
@@ -107,13 +119,18 @@ let g:AutoPairsMapBS = 0
 let g:AutoPairsMapCR = 0 
 let g:AutoPairsMultilineClose = 0
 
+" Switch
+let g:switch_mapping = "-"
+
 " this is for neovim to properly recognize path to my ruby binary
 " where necessary gems are installed:
 let g:ruby_host_prog = '~/.rbenv/versions/2.6.0/bin/neovim-ruby-host'
 
-" fuzzy search will respond to ? and open a preview window
-" command! -bang -nargs=* Ag
-"       \ call fzf#vim#ag(<q-args>,
-"       \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-"       \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-"       \                 <bang>0)
+" fuzzy search
+let g:fzf_layout = { 'window': 'enew' }
+
+" coffeetags
+let g:CoffeeAutoTagDisabled=0     " Disables autotaging on save (Default: 0 [false])
+let g:CoffeeAutoTagFile='./tags'       " Name of the generated tag file (Default: ./tags)
+let g:CoffeeAutoTagIncludeVars=0  " Includes variables (Default: 0 [false])
+let g:CoffeeAutoTagTagRelative=1  " Sets file names to the relative path from the tag file location to the tag file location (Default: 1 [true])

@@ -3,7 +3,7 @@ fun! Format_WhiteSpace_RemoveTrailing()
 endfun
 
 function! FormatJSON()
-:%!python -m json.tool
+  :%!jq '.'
 endfunction
 
 fun! CheckTabs()

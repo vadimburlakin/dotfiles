@@ -22,6 +22,12 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
+" navigation in insert mode
+inoremap <M-l> <Right>
+inoremap <M-h> <Left>
+inoremap <M-j> <Down>
+inoremap <M-k> <Up>
+
 " upper or lowercase the current word
 nmap g^ gUiW
 nmap gv guiW
@@ -46,6 +52,24 @@ nmap { {zz
 map <C-n> :NERDTreeToggle<CR>
 map <C-p> :CommandT<CR>
 
+" noremap dd "ddd
+" noremap d "dd
+" noremap D "dD
+" noremap C "dC
+" noremap x "_x
+" noremap cc "dcc
+" noremap c "dc
+" noremap s "ds
+"
+" vnoremap dd "ddd
+" vnoremap d "dd
+" vnoremap D "dD
+" vnoremap C "dC
+" vnoremap x "_x
+" vnoremap cc "dcc
+" vnoremap c "dc
+" vnoremap s "ds
+
 " leader mapping
 map <leader>. :TagbarToggle<CR>
 nnoremap <Leader>b :CommandTBuffer<CR>
@@ -56,9 +80,10 @@ nnoremap <leader>m :CommandTMRU<CR>
 nnoremap <leader>a :Ag<space>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
-nmap <leader>z :SSUBlackHole<CR>
 imap ˙ <C-o>b
 imap ¬ <C-o>w
+imap <leader>j <C-O>:call FormatJSON()<CR>
+nmap <leader>j :call FormatJSON()<CR>
 
 " neosnippet key-mappings.
 imap <expr><C-j> pumvisible() ? "\<C-n>" :  "\<Down>\<C-o>A"
@@ -74,6 +99,6 @@ smap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<C-o>A"
 vmap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<C-o>A"
 xmap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<C-o>A"
 
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
+" if has('conceal')
+"   set conceallevel=2 concealcursor=niv
+" endif

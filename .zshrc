@@ -4,6 +4,7 @@ fi
 
 export GOPATH="$HOME/.go"
 export PATH=$PATH:$GOPATH/bin
+export ANDROID_HOME=$HOME/Library/Android/sdk
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -83,7 +84,8 @@ bindkey '^xe' edit-command-line
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
 # Preferred editor for local and remote sessions
 export EDITOR='nvim'
 
@@ -118,6 +120,12 @@ cdl () {
 }
 mkdircd () {
   mkdir -p $1 && cd $1
+}
+ccc () {
+  echo `realpath $1` > ~/.ccc
+}
+ppp () {
+  cp `cat ~/.ccc` .
 }
 cdf () {
     currFolderPath=$( /usr/bin/osascript <<"    EOT"
@@ -157,6 +165,21 @@ extract () {
 
 ff () { /usr/bin/find . -name "$@" ; }
 
-. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 eval "$(rbenv init -)"
 [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/slss.zsh
+
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
