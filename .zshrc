@@ -4,6 +4,7 @@ fi
 
 export GOPATH="$HOME/.go"
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/.cargo/bin
 export ANDROID_HOME=$HOME/Library/Android/sdk
 
 # Path to your oh-my-zsh installation.
@@ -183,3 +184,4 @@ eval "$(rbenv init -)"
 
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
+alias python=/usr/local/bin/python3
