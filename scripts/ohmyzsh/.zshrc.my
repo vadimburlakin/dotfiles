@@ -10,6 +10,7 @@ plugins=(
   fzf-tab
 )
 source $ZSH/oh-my-zsh.sh
+eval "$(rbenv init - zsh)"
 
 # --------------------------------------------------------------------
 

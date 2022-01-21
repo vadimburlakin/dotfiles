@@ -1,4 +1,9 @@
 #!/bin/bash
+
+## WARNING ##
+# If you change ruby version, also update:
+#  scripts/vim/.vim/startup/settings.vim
+# because Neovim needs to know Ruby install location.
 RUBYVERSION="3.0.0"
 SCRIPT="ruby3"
 

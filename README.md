@@ -1,5 +1,7 @@
 # Prerequisites
 
+These dotfiles are created for Macos on Intel. After reinstalling OS or getting a new Mac, do this first:
+
 1. Manually install Xcode from the App Store.
 2. Install command line tools: `xcode-select --install`.
 3. Accept Xcode license agreement: `sudo xcodebuild -license`.
@@ -23,6 +25,7 @@ Install script also takes the following optional arguments:
 - Switch default shell to zsh.
 - Switch iTerm2 font to `Hack Nerd Font`.
 - Run `tmux`, do a `prefix + I` (capital i, as in Install) to fetch the plugins.
+- Run `:checkhealth` in vim. Confirm neovim runs.
 - Configure SSH keys.
 - Configure macos keyboard shortcuts.
 - Check postrequisites in personal notes.

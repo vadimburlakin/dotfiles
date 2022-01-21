@@ -63,5 +63,14 @@ echo "Installing Vundle..."
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 echo "Installing plugins..."
-vim +PluginInstall +qall
+nvim +PluginInstall +qall
 
+echo "Setting up Ruby..."
+gem install neovim
+
+echo "Setting up vim plugins..."
+WORKDIR=$(pwd)
+cd $CONFIGDIR/bundle/command-t
+rake clean
+rake make
+cd $WORKDIR

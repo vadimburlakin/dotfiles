@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## WARNING ##
+# 1. Ruby must come before Vim.
+# 2. As of now, Ruby3 is the default Ruby that is also used by Neovim.
 LIST=(homebrew git fzf zsh ohmyzsh tmux fonts rbenv ruby3 vim)
 
 # LIST=(homebrew git zsh ohmyzsh tmux fonts vim nvm \

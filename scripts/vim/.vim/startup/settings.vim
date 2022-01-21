@@ -16,7 +16,6 @@ set nowrap
 if &diff
   set wrap
 endif
-set diffopt+=iwhite
 let &scrolloff=999-&scrolloff
 set ignorecase
 set smartcase
@@ -124,7 +123,7 @@ let g:switch_mapping = "-"
 
 " this is for neovim to properly recognize path to my ruby binary
 " where necessary gems are installed:
-let g:ruby_host_prog = '~/.rbenv/versions/2.7.2/bin/neovim-ruby-host'
+let g:ruby_host_prog = '~/.rbenv/versions/3.0.0/bin/neovim-ruby-host'
 
 " fuzzy search
 let g:fzf_layout = { 'window': 'enew' }

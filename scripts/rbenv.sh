@@ -23,4 +23,7 @@ fi
 echo "Installing $BREWFORMULA from Homebrew..."
 brew install $BREWFORMULA
 
+# so that ruby shims immediately become available for next scripts:
+eval "$(rbenv init - zsh)"
+
 echo "done"
