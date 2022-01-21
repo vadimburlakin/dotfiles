@@ -1,9 +1,9 @@
 #!/bin/bash
 
-CONFIGFILENAME=".zshrc.rbenv"
+CONFIGFILENAME=".zshrc.nvm"
 CONFIGFILE="$HOME/$CONFIGFILENAME"
-SCRIPT="rbenv"
-BREWFORMULA="rbenv"
+SCRIPT="nvm"
+BREWFORMULA="nvm"
 
 while getopts r flag
 do
@@ -16,7 +16,7 @@ REINSTALL=${REINSTALL:-false}
 undo () {
   brew remove $BREWFORMULA
   rm -rf $CONFIGFILE
-  sed -i '' '/rbenv/d' ~/.zshrc
+  sed -i '' '/nvm/d' ~/.zshrc
 }
 
 if [ "$REINSTALL" == "true" ]; then
@@ -26,6 +26,7 @@ fi
 
 echo "Installing $BREWFORMULA from Homebrew..."
 brew install $BREWFORMULA
+mkdir -p ~/.nvm
 
 if [[ -e $CONFIGFILE ]]; then
   warning "$CONFIGFILE already exists, renaming it to $CONFIGFILE.backup"
@@ -33,4 +34,4 @@ if [[ -e $CONFIGFILE ]]; then
 fi
 
 cp -R $SCRIPTSDIR/$SCRIPT/$CONFIGFILENAME $CONFIGFILE
-echo "source ~/.zshrc.rbenv" >> ~/.zshrc
+echo "source ~/.zshrc.nvm" >> ~/.zshrc

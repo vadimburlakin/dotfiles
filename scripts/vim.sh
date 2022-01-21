@@ -66,7 +66,7 @@ echo "Installing plugins..."
 nvim +PluginInstall +qall
 
 echo "Setting up Ruby..."
-eval "$(rbenv init - zsh)"
+source ~/.zshrc.rbenv
 gem install neovim
 
 echo "Setting up vim plugins..."
