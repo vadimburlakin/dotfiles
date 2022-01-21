@@ -13,7 +13,8 @@
 
 # Postrequisites
 
-1. Switch default shell to zsh.
-2. Run `tmux`, do a `prefix + I` (capital i, as in Install) to fetch the plugins
-3. Check postrequisites in personal notes.
+- Switch default shell to zsh.
+- Switch iTerm2 font to `Hack Nerd Font`.
+- Run `tmux`, do a `prefix + I` (capital i, as in Install) to fetch the plugins.
+- Check postrequisites in personal notes.
 

@@ -16,6 +16,9 @@ REINSTALL=${REINSTALL:-false}
 
 undo () {
   rm -rf $ZSH
+  rm ~/.zshrc
+  rm ~/.zshrc.dist
+  rm ~/.zshrc.my
 }
 
 if [ "$REINSTALL" == "true" ]; then
@@ -41,13 +44,16 @@ fi
 echo ""
 
 echo "Installing .zshrc..."
+
 ZSHRC="$HOME/.zshrc"
 if [[ -e $ZSHRC ]]; then
-  warning "$ZSHRC already exists, renaming it to $ZSHRC.dist"
-  mv $ZSHRC $ZSHRC.dist
+  warning "$ZSHRC already exists, renaming it to $ZSHRC.backup"
+  mv $ZSHRC $ZSHRC.backup
 fi
 
-cp $SCRIPTSDIR/$SCRIPT/.zshrc $ZSHRC
+echo "source ~/.zshrc.my" > $ZSHRC
+cp $SCRIPTSDIR/$SCRIPT/.zshrc.my $ZSHRC.my
+cp $SCRIPTSDIR/$SCRIPT/.zshrc.dist $ZSHRC.dist
 
 echo "Installing fzf-tab..."
 git clone https://github.com/Aloxaf/fzf-tab $ZSH/custom/plugins/fzf-tab

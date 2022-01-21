@@ -30,15 +30,15 @@ echo "Installing $BREWFORMULA from Homebrew..."
 brew install $BREWFORMULA
 
 if [[ -e $CONFIGDIR ]]; then
-  warning "$CONFIGDIR already exists, renaming it to $CONFIGDIR.dist"
-  mv $CONFIGDIR $CONFIGDIR.dist
+  warning "$CONFIGDIR already exists, renaming it to $CONFIGDIR.backup"
+  mv $CONFIGDIR $CONFIGDIR.backup
 fi
 
 cp -R $SCRIPTSDIR/$SCRIPT/$CONFIGDIRNAME $CONFIGDIR
 
 if [[ -e $CONFIGFILE ]]; then
-  warning "$CONFIGFILE already exists, renaming it to $CONFIGFILE.dist"
-  mv $CONFIGFILE $CONFIGFILE.dist
+  warning "$CONFIGFILE already exists, renaming it to $CONFIGFILE.backup"
+  mv $CONFIGFILE $CONFIGFILE.backup
 fi
 
 cp -R $SCRIPTSDIR/$SCRIPT/$CONFIGFILENAME $CONFIGFILE
