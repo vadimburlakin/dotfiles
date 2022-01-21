@@ -2,6 +2,7 @@
 
 1. Manually install Xcode from the App Store.
 2. Install command line tools: `xcode-select --install`.
+3. Accept Xcode license agreement: `sudo xcodebuild -license`.
 
 # Installation
 
@@ -22,5 +23,13 @@ Install script also takes the following optional arguments:
 - Switch default shell to zsh.
 - Switch iTerm2 font to `Hack Nerd Font`.
 - Run `tmux`, do a `prefix + I` (capital i, as in Install) to fetch the plugins.
+- Configure SSH keys.
+- Configure macos keyboard shortcuts.
 - Check postrequisites in personal notes.
+
+# Keyboard shortcuts
+
+- Switch `Caps Lock` with `Control`
+- `Cmd + Option + RightArrow` - select next tab
+- `Cmd + Option + LeftArrow` - select previous tab
 

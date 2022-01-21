@@ -1,0 +1,4 @@
+Host my-github
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/my-github

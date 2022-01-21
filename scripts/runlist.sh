@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LIST=(homebrew git fzf zsh ohmyzsh tmux fonts)
+LIST=(homebrew git fzf zsh ohmyzsh tmux fonts rbenv ruby3 vim)
 
 # LIST=(homebrew git zsh ohmyzsh tmux fonts vim nvm \
 #         rbenv nodejs ruby iterm vscode \
