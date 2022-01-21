@@ -12,25 +12,25 @@ Plugin 'scrooloose/nerdtree' " displays directory tree
 " Plugin 'majutsushi/tagbar' " displays file tags e.g. class names, imports, etc.
 " Plugin 'lukaszkorecki/CoffeeTags'
 Plugin 'BufOnly.vim' " close all buffers (files) but this one
-Plugin 'benmills/vimux' " interact with tmux, like create a pane and run a command there
+" Plugin 'benmills/vimux' " interact with tmux, like create a pane and run a command there
 Plugin '907th/vim-auto-save' " auto saves buffers on edit; conflicts with neosnippet in some cases (google it)
 Plugin 'tpope/vim-surround' " shortcuts to surround/wrap selected text with something
 " fuzzy finder: filter that can be used with any list like files, history, processes, etc.
 Plugin 'junegunn/fzf.vim' " fuzzy search for vim
-Plugin 'junegunn/fzf' " fzf binary
+" Plugin 'junegunn/fzf' " fzf binary
 Plugin 'wincent/command-t' " a better fuzzy file search (siilar to ctrlp)
 Plugin 'AndrewRadev/Switch.vim' " a plugin to switch (invert) words like true/false
 
 " ### Generic Programming Support ###
 Plugin 'jiangmiao/auto-pairs' " automatically put a closing char e.g. when type '(' it will add ')'
 Plugin 'tomtom/tcomment_vim' " comment stuff in and out
-Plugin 'janko-m/vim-test' " run tests for the current file
+" Plugin 'janko-m/vim-test' " run tests for the current file
 
 " ### Markdown / Writting ###
 
 " ### Git Support ###
 " Plugin 'tpope/vim-fugitive' " git utils like diff, edit, status, commit, etc.
-Plugin 'airblade/vim-gitgutter' " shows a git diff in the gutter (sign column)
+" Plugin 'airblade/vim-gitgutter' " shows a git diff in the gutter (sign column)
 
 " ### Theme / Interface ###
 Plugin 'ryanoasis/vim-devicons' " add icons to plugins

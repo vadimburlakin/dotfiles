@@ -1,11 +1,17 @@
 # Prerequisites
 
 1. Manually install Xcode from the App Store.
-2. Install command line tools.
+2. Install command line tools: `xcode-select --install`.
 
 # Installation
 
 1. Run `install.sh` for basic setup.
+
+Install script also takes the following optional arguments:
+
+- `-f script`: continue running from the next script after _script_. This will skip all scripts up to, and including _script_.
+- `-o script`: disregard the runlist and only run a single _script_.
+- `-r`: reinstall mode: uninstall each tool before installing. Can be used alone (in which case reinstall mode is applied to entire runlist), or combined with either of the above options.
 
 # Install manually
 

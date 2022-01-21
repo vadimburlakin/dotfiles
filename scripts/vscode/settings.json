@@ -1,0 +1,25 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "vim.startInInsertMode": true,
+  "vim.insertModeKeyBindings": [
+  
+      {
+          "before": ["<C-l>"],
+          "after": ["<Esc>", "A"]
+      }
+  ],
+  "files.autoSave": "afterDelay",
+  "vim.smartRelativeLine": true,
+  "editor.tabSize": 2,
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "window.zoomLevel": 2,
+  "editor.formatOnSave": true,
+  "prettier.requireConfig": true,
+  "prettier.configPath": ".prettierrc",
+  "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
