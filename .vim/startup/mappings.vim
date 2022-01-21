@@ -89,7 +89,7 @@ nmap <leader>j :call FormatJSON()<CR>
 imap <expr><C-j> pumvisible() ? "\<C-n>" :  "\<Down>\<C-o>A"
 imap <expr><C-k> pumvisible() ? "\<C-p>" : "\<Up>"
 imap <C-h> <Left>
-imap <expr><cr> pumvisible() ? (neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : deoplete#mappings#close_popup()) : "\<CR>\<Plug>AutoPairsReturn"
+" imap <expr><cr> pumvisible() ? (neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : deoplete#mappings#close_popup()) : "\<CR>\<Plug>AutoPairsReturn"
 imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
 vmap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<TAB>"
@@ -102,3 +102,8 @@ xmap <expr><C-l> neosnippet#jumpable() ? "\<Plug>(neosnippet_jump)" : "\<C-o>A"
 " if has('conceal')
 "   set conceallevel=2 concealcursor=niv
 " endif
+
+let g:ctrlp_prompt_mappings = {
+      \ 'PrtInsert("c")':       ['<MiddleMouse>', '<insert>', '<c-p>'],
+      \ 'PrtInsert()':          ['<c-\>']
+      \ }

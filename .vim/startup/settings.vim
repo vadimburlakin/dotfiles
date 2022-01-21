@@ -103,10 +103,10 @@ let g:neosnippet#disable_runtime_snippets = {
 		\ }
 
 " deoplete
-autocmd VimEnter * call deoplete#custom#option('ignore_sources', {'_': ['dictionary']})
-let g:deoplete#auto_complete_start_length = 1 
-let g:deoplete#enable_at_startup = 1 
-let g:deoplete#enable_smart_case = 1 
+" autocmd VimEnter * call deoplete#custom#option('ignore_sources', {'_': ['dictionary']})
+" let g:deoplete#auto_complete_start_length = 1 
+" let g:deoplete#enable_at_startup = 1 
+" let g:deoplete#enable_smart_case = 1 
 
 " auto save
 let g:auto_save = 1
@@ -124,7 +124,7 @@ let g:switch_mapping = "-"
 
 " this is for neovim to properly recognize path to my ruby binary
 " where necessary gems are installed:
-let g:ruby_host_prog = '~/.rbenv/versions/2.6.0/bin/neovim-ruby-host'
+let g:ruby_host_prog = '~/.rbenv/versions/2.7.2/bin/neovim-ruby-host'
 
 " fuzzy search
 let g:fzf_layout = { 'window': 'enew' }

@@ -1,11 +1,7 @@
-if [ -e ~/.zshrc.private ]; then
-  source ~/.zshrc.private
-fi
-
-export GOPATH="$HOME/.go"
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$HOME/.cargo/bin
-export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$HOME/work/data-aggregation-utils/bin:$HOME/gocode/bin
+export GOPATH=/Users/vadim/gocode
+export NVM_DIR=$HOME/.nvm
+export JAVA_HOME="/usr/libexec/java_home -v 1.8"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -70,11 +66,9 @@ DISABLE_AUTO_UPDATE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  thefuck
-  zsh-autosuggestions
   vi-mode
   fzf
-  docker
+  fzf-tab
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -111,7 +105,6 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias f='open -a Finder ./'
 alias ..='cd ../'
-s () { /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl "$1"; }
 tmp () {
 	mkdir -p $HOME/tmp/`date '+%Y-%m-%d'`
 	cd $HOME/tmp/`date '+%Y-%m-%d'`
@@ -167,21 +160,10 @@ extract () {
 ff () { /usr/bin/find . -name "$@" ; }
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(rbenv init -)"
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/vadim/work/mt-ssu/node_modules/tabtab/.completions/slss.zsh
 
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
 alias python=/usr/local/bin/python3
+export PATH="/usr/local/sbin:$PATH"

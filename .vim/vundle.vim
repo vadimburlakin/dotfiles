@@ -9,8 +9,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " ### Utility ###
 Plugin 'scrooloose/nerdtree' " displays directory tree
-Plugin 'majutsushi/tagbar' " displays file tags e.g. class names, imports, etc.
-Plugin 'lukaszkorecki/CoffeeTags'
+" Plugin 'majutsushi/tagbar' " displays file tags e.g. class names, imports, etc.
+" Plugin 'lukaszkorecki/CoffeeTags'
 Plugin 'BufOnly.vim' " close all buffers (files) but this one
 Plugin 'benmills/vimux' " interact with tmux, like create a pane and run a command there
 Plugin '907th/vim-auto-save' " auto saves buffers on edit; conflicts with neosnippet in some cases (google it)
@@ -29,7 +29,7 @@ Plugin 'janko-m/vim-test' " run tests for the current file
 " ### Markdown / Writting ###
 
 " ### Git Support ###
-Plugin 'tpope/vim-fugitive' " git utils like diff, edit, status, commit, etc.
+" Plugin 'tpope/vim-fugitive' " git utils like diff, edit, status, commit, etc.
 Plugin 'airblade/vim-gitgutter' " shows a git diff in the gutter (sign column)
 
 " ### Theme / Interface ###
@@ -40,12 +40,12 @@ Plugin 'AlessandroYorba/Sierra'
 
 " ### Programming language support ###
 " Plugin 'pangloss/vim-javascript'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'Shougo/deoplete.nvim'
+" Plugin 'kchmck/vim-coffee-script'
+" Plugin 'Shougo/deoplete.nvim'
 Plugin 'Shougo/neosnippet.vim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'leafgarland/typescript-vim'
+" Plugin 'roxma/nvim-yarp'
+" Plugin 'roxma/vim-hug-neovim-rpc'
+" Plugin 'leafgarland/typescript-vim'
 
 " OSX stupid backspace fix
 set backspace=indent,eol,start
