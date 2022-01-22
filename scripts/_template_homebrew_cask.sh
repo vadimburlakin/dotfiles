@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SCRIPT="fzf"
-BREWFORMULA="fzf"
+SCRIPT="replaceme"
+BREWFORMULA="replaceme"
 
 while getopts r flag
 do
@@ -12,7 +12,7 @@ done
 REINSTALL=${REINSTALL:-false}
 
 undo () {
-  brew remove $BREWFORMULA
+  brew remove --cask $BREWFORMULA
 }
 
 if [ "$REINSTALL" == "true" ]; then
@@ -21,6 +21,6 @@ if [ "$REINSTALL" == "true" ]; then
 fi
 
 echo "Installing $BREWFORMULA from Homebrew..."
-brew install $BREWFORMULA
+brew install --cask $BREWFORMULA
 
 echo "done"

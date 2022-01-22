@@ -22,6 +22,8 @@ Install script also takes the following optional arguments:
 
 # Postrequisites
 
+- System Preferences - Security and Privacy: Require password _immediately_ after sleep or screen saver begins.
+- System Preferences - Desktop and screen saver: Show screen saver after 5 minutes.
 - Switch default shell to zsh.
 - Switch iTerm2 font to `Hack Nerd Font`.
 - Run `tmux`, do a `prefix + I` (capital i, as in Install) to fetch the plugins.
