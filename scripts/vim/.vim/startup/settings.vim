@@ -133,3 +133,6 @@ let g:CoffeeAutoTagDisabled=0     " Disables autotaging on save (Default: 0 [fal
 let g:CoffeeAutoTagFile='./tags'       " Name of the generated tag file (Default: ./tags)
 let g:CoffeeAutoTagIncludeVars=0  " Includes variables (Default: 0 [false])
 let g:CoffeeAutoTagTagRelative=1  " Sets file names to the relative path from the tag file location to the tag file location (Default: 1 [true])
+
+" coq_nvim
+let g:coq_settings = { 'auto_start': 'shut-up' }

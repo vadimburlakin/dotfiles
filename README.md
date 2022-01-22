@@ -29,6 +29,7 @@ Install script also takes the following optional arguments:
 - iTerm2 - Preferences - General - Selection - Applications in terminal may access clipboard.
 - Run `tmux`, do a `prefix + I` (capital i, as in Install) to fetch the plugins.
 - Run `:checkhealth` in vim. Confirm neovim runs.
+- Run `:COQdeps` in nvim. Confirm operation with `:COQnow`.
 - Configure SSH keys.
 - Configure macos keyboard shortcuts.
 - Check postrequisites in personal notes.
