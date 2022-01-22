@@ -20,6 +20,8 @@ if [ "$REINSTALL" == "true" ]; then
   undo
 fi
 
+ssh-keygen -f ~/.ssh/$KEYNAME -N ''
+
 CONFIGPATH="$HOME/.ssh/config"
 
 if [[ -e $CONFIGPATH ]]; then
@@ -28,5 +30,4 @@ if [[ -e $CONFIGPATH ]]; then
 fi
 
 cp -R $SCRIPTSDIR/$SCRIPT/config $CONFIGPATH
-
-ssh-keygen -f ~/.ssh/$KEYNAME -N ''
+chmod 644 $CONFIGPATH
