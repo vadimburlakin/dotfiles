@@ -1,8 +1,8 @@
 #!/bin/bash
 
 SCRIPT="misc-gui"
-BREWFORMULA=(iterm2 zoomus vlc vmware-fusion postman notion kindle \
-         google-chrome chromium drawio-desktop docker deepl slack \
+BREWFORMULA=(iterm2 zoom vlc vmware-fusion postman notion kindle \
+         google-chrome chromium drawio docker deepl slack \
          adobe-creative-cloud transmission)
 
 while getopts r flag
