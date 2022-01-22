@@ -26,6 +26,7 @@ Install script also takes the following optional arguments:
 - System Preferences - Desktop and screen saver: Show screen saver after 5 minutes.
 - Switch default shell to zsh.
 - Switch iTerm2 font to `Hack Nerd Font`.
+- iTerm2 - Preferences - General - Selection - Applications in terminal may access clipboard.
 - Run `tmux`, do a `prefix + I` (capital i, as in Install) to fetch the plugins.
 - Run `:checkhealth` in vim. Confirm neovim runs.
 - Configure SSH keys.
