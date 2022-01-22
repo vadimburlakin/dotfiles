@@ -12,7 +12,7 @@ done
 REINSTALL=${REINSTALL:-false}
 
 undo () {
-  for formula in "${BREWFORMULA[@}]}"; do
+  for formula in "${BREWFORMULA[@]}"; do
     brew remove $formula
   done;
 }
@@ -23,7 +23,7 @@ if [ "$REINSTALL" == "true" ]; then
 fi
 
 echo "Installing ${BREWFORMULA[@]} from Homebrew..."
-for formula in "${BREWFORMULA[@}]}"; do
+for formula in "${BREWFORMULA[@]}"; do
   brew install $formula
 done;
 
