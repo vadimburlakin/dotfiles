@@ -2,8 +2,7 @@
 
 SCRIPT="misc-gui"
 BREWFORMULA=(vmware-fusion iterm2 zoom vlc postman notion kindle \
-         google-chrome chromium drawio docker deepl slack \
-         adobe-creative-cloud transmission)
+         google-chrome chromium drawio docker deepl slack transmission)
 
 while getopts r flag
 do
