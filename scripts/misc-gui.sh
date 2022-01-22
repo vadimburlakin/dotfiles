@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT="misc-gui"
-BREWFORMULA=(iterm2 zoom vlc vmware-fusion postman notion kindle \
+BREWFORMULA=(vmware-fusion iterm2 zoom vlc postman notion kindle \
          google-chrome chromium drawio docker deepl slack \
          adobe-creative-cloud transmission)
 
