@@ -30,6 +30,7 @@ Plugin 'AlessandroYorba/Sierra'
 " ### Programming language support ###
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'ms-jpq/coq_nvim'
+Plugin 'airblade/vim-gitgutter'
 
 " OSX stupid backspace fix
 set backspace=indent,eol,start
