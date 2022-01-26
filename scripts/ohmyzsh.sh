@@ -51,7 +51,8 @@ if [[ -e $ZSHRC ]]; then
   mv $ZSHRC $ZSHRC.backup
 fi
 
-echo "source ~/.zshrc.my" > $ZSHRC
+echo "source ~/.zshrc.homebrew" > $ZSHRC
+echo "source ~/.zshrc.my" >> $ZSHRC
 cp $SCRIPTSDIR/$SCRIPT/.zshrc.my $ZSHRC.my
 cp $SCRIPTSDIR/$SCRIPT/.zshrc.dist $ZSHRC.dist
 

@@ -31,6 +31,5 @@ if [[ -e $CONFIGFILE ]]; then
 fi
 
 cp -R $SCRIPTSDIR/$SCRIPT/$CONFIGFILENAME $CONFIGFILE
-echo "source ~/.zshrc.rbenv" >> ~/.zshrc
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
