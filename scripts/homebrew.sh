@@ -33,4 +33,4 @@ fi
 cp -R $SCRIPTSDIR/$SCRIPT/$CONFIGFILENAME $CONFIGFILE
 echo "source ~/.zshrc.rbenv" >> ~/.zshrc
 
-source $CONFIGFILE
+eval "$(/opt/homebrew/bin/brew shellenv)"
