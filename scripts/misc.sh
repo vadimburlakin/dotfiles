@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT="misc"
-BREWFORMULA=(git fzf the_silver_searcher zsh)
+BREWFORMULA=(git fzf the_silver_searcher watch zsh jq unison)
 
 while getopts r flag
 do
